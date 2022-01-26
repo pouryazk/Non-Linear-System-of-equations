@@ -26,7 +26,8 @@ solution_list = [
     opt.fsolve(system_of_equations, initial_guess_array, args=(weissenberg, gamma_dot)).flat[1] for weissenberg in weissenberg_list
 ]
 plt.plot(weissenberg_list, solution_list)
-plt.xlabel(f'weisenberg')
-plt.ylabel('phi_xx')
+plt.title("Shear Stress vs Weissenberg Number")
+plt.xlabel(f'Wi')
+plt.ylabel(r'$\sigma_{xx}$')
 # plt.ylim([0.1, 0.3])
 plt.show()
