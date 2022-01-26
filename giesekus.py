@@ -19,11 +19,11 @@ def system_of_equations(variables, *data):
 
 
 weissenberg_list = np.linspace(0, 150, 800)
-g_dot = 1
+gamma_dot = 1
 initial_guess = (0.1,)*6
 initial_guess_array = array(initial_guess)
 solution_list = [
-    opt.fsolve(system_of_equations, initial_guess_array, args=(weissenberg, g_dot)).flat[0] for weissenberg in weissenberg_list
+    opt.fsolve(system_of_equations, initial_guess_array, args=(weissenberg, gamma_dot)).flat[1] for weissenberg in weissenberg_list
 ]
 plt.plot(weissenberg_list, solution_list)
 plt.xlabel(f'weisenberg')
